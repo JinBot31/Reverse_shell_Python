@@ -7,7 +7,7 @@ The script demonstrates key principles of remote system access and control in th
 
 This project is intended for ethical hacking, research, and educational purposes only. 
 Unauthorized use of this script on systems or networks you do not own or have explicit permission to test is illegal and unethical. 
-Use responsibly and always adhere to the laws and regulations of your country.
+Use responsibly and always adhere to the laws and regulations.
 
 # Features
   1. Lightweight Python script for reverse shell functionality.
