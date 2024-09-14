@@ -8,9 +8,9 @@ Unauthorized use of this script on systems or networks you do not own or have ex
 Use responsibly and always adhere to the laws and regulations of your country.
 
 # Features
-  Lightweight Python script for reverse shell functionality.
-  Supports remote command execution on the target machine.
-  Simple structure, easily customizable for penetration testing and educational scenarios.
+  1. Lightweight Python script for reverse shell functionality.\n
+  2. Supports remote command execution on the target machine.\n
+  3. Simple structure, easily customizable for penetration testing and educational scenarios.
 
 # How It Works
 A reverse shell allows a machine to establish a connection back to a remote server. 
