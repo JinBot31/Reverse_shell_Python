@@ -26,4 +26,6 @@ This type of setup is commonly explored in the context of network security and p
 
 # Additional features 
 > [!IMPORTANT]
-> This project is divided in two separated scripts that works independly.The first one runs in the local machine that gets the connection (attacker machine) and the other one is (host machine)
+> This project is divided into two separate scripts that function independently. The first script runs on the local machine (attacker machine) and handles establishing the connection, while the second script operates on the host machine. Both scripts work together to achieve the desired communication between the attacker and host machines.
+
+
