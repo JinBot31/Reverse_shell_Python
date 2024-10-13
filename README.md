@@ -3,7 +3,9 @@
 This repository contains a reverse shell implementation in Python, designed for educational and security research purposes. 
 The script demonstrates key principles of remote system access and control in the context of cybersecurity.
 
-# ⚠️ Disclaimer
+# Take into consideration 
+
+> .[!WARNING].
 
 This project is intended for ethical hacking, research, and educational purposes only. 
 Unauthorized use of this script on systems or networks you do not own or have explicit permission to test is illegal and unethical. 
