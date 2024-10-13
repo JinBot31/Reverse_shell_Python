@@ -20,6 +20,6 @@ Use responsibly and always adhere to the laws and regulations.
 > [!TIP]
 > For the purpose of a better understanding please  read the following explanation.
 
-reverse shell allows a machine to establish a connection back to a remote server. 
+A reverse shell allows a machine to establish a connection back to a remote server. 
 Once the connection is established, the remote server gains the ability to execute commands on the machine. 
 This type of setup is commonly explored in the context of network security and penetration testing to understand how unauthorized access can occur and how it can be prevented.
