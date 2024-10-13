@@ -23,3 +23,7 @@ Use responsibly and always adhere to the laws and regulations.
 A reverse shell allows a machine to establish a connection back to a remote server. 
 Once the connection is established, the remote server gains the ability to execute commands on the machine. 
 This type of setup is commonly explored in the context of network security and penetration testing to understand how unauthorized access can occur and how it can be prevented.
+
+# Additional features 
+> [!IMPORTANT]
+> This project is divided in two separated scripts that works independly.The first one runs in the local machine that gets the connection (attacker machine) and the other one is (host machine)
