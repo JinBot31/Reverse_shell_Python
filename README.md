@@ -30,11 +30,15 @@ This type of setup is commonly explored in the context of network security and p
 
 > [!NOTE]
 > XD
+
 > [!WARNING]
 > XD
+
 > [!TIP]
 > XD
+
 > [!IMPORTANT]
 > XD
+
 > [!NOTE]
 > XD
