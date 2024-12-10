@@ -40,5 +40,14 @@ This type of setup is commonly explored in the context of network security and p
 > [!IMPORTANT]
 > XD
 
-> [! DANGEROUS]
+> [!DANGER]
+> XD
+
+> [!INFO]
+> XD
+
+> [!QUESTION]
+> XD
+
+> [!SUCCESS]
 > XD
